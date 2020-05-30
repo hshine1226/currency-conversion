@@ -16,7 +16,7 @@ def get_country_code():
         country = tr.contents[1].string.capitalize()
         currency = tr.contents[3].string
         code = tr.contents[5].string
-        number = tr.contents[7].string
+        # number = tr.contents[7].string
         if not currency == 'No universal currency':
             dictionary = {
                 'country': country,

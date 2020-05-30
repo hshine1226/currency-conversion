@@ -24,10 +24,7 @@ def check_in_list(num):
         return True
 
 
-codes = []
-
-
-def get_codes():
+def get_codes(codes=[]):
     if len(codes) == 0:
         while True:
             num = input_num()
@@ -36,7 +33,7 @@ def get_codes():
         codes.append(get_code(num))
         print(f"{country_code[num]['country']}")
         print("Now choose another country\n")
-        get_codes()
+        get_codes(codes)
     elif len(codes) == 1:
         while True:
             num = input_num()
@@ -44,7 +41,7 @@ def get_codes():
                 break
         codes.append(get_code(num))
         print(f"{country_code[num]['country']}")
-    return codes
+    return codes[0], codes[1]
 
 
 os.system('clear')
